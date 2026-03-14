@@ -37,7 +37,8 @@ function App() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/chatbot", {
+      const apiBase = import.meta.env.VITE_API_BASE_URL || "";
+      const res = await fetch(`${apiBase}/api/chatbot`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
